@@ -152,30 +152,14 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        the: the {
-            compatible = "zmk,behavior-mod-morph";
-            label = "THE";
-            bindings = <&th_lower>, <&th_upper>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
     };
 
     macros {
-        th_lower: the {
+        the: the {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp T &kp H &kp E>;
             label = "THE";
-        };
-
-        th_upper: the_upper {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(T) &kp H &kp E>;
-            label = "THE_UPPER";
         };
     };
 
@@ -191,21 +175,21 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp N1  &kp N2  &kp N3        &kp N4        &kp N5       &kp N6       &kp N7         &kp N8      &kp N9   &kp N0           &kp DELETE
-&kp TAB     &kp Q   &kp W   &kp E         &kp R         &kp T        &kp Y        &kp U          &kp I       &kp O    &kp P            &the
-&kp LCTRL   &kp A   &kp S   &kp D         &kp F         &kp G        &kp H        &kp J          &lt 1 K     &kp L    &hmr RCTRL SEMI  &kp RIGHT_CONTROL
-&kp LSHFT   &kp Z   &kp X   &kp C         &kp V         &kp B        &kp N        &kp M          &kp COMMA   &kp DOT  &shift_exclm     &sk RIGHT_SHIFT
+&kp ESCAPE  &kp N1  &kp N2  &kp N3        &kp N4        &kp N5       &kp N6       &kp N7         &kp N8      &kp N9        &kp N0           &kp DELETE
+&kp TAB     &kp Q   &kp W   &kp E         &kp R         &kp T        &kp Y        &kp U          &kp I       &kp O         &kp P            &the
+&kp LCTRL   &kp A   &kp S   &kp D         &kp F         &kp G        &kp H        &kp J          &lt 1 K     &hmr RSHFT L  &hmr RCTRL SEMI  &kp RIGHT_CONTROL
+&kp LSHFT   &kp Z   &kp X   &kp C         &kp V         &kp B        &kp N        &kp M          &kp COMMA   &kp DOT       &shift_exclm     &sk RIGHT_SHIFT
                             &kp LEFT_GUI  &kp LEFT_ALT  &kp SPACE    &lt 2 ENTER  &kp BACKSPACE  &sk RSHIFT
             >;
         };
 
         num_sym {
             bindings = <
-&trans  &trans                &trans    &trans        &trans         &trans        &trans         &trans      &trans      &trans      &trans             &to 0
-&trans  &kp N1                &kp N3    &kp RA(N2)    &kp RA(N6)     &trans        &kp LS(COMMA)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp RA(N9)         &trans
-&trans  &kp EQUAL             &kp NUBS  &kp LS(NUBS)  &kp N6         &kp PLUS      &kp RA(N3)     &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp LS(N0)         &trans
-&trans  &kp LS(SINGLE_QUOTE)  &trans    &trans        &kp BACKSLASH  &kp RA(N8)    &kp RA(N7)     &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp RIGHT_BRACKET  &trans
-                                        &trans        &trans         &trans        &trans         &trans      &trans
+&trans  &trans                &trans    &trans        &trans         &trans         &trans         &trans      &trans      &trans      &trans             &to 0
+&trans  &kp N1                &kp N3    &kp RA(N2)    &kp RA(N6)     &kp LS(DOT)    &kp LS(COMMA)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp RA(N9)         &trans
+&trans  &kp EQUAL             &kp NUBS  &kp LS(NUBS)  &kp N6         &kp PLUS       &kp RA(N3)     &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp LS(N0)         &trans
+&trans  &kp LS(SINGLE_QUOTE)  &trans    &trans        &kp BACKSLASH  &kp RA(N8)     &kp RA(N7)     &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp RIGHT_BRACKET  &trans
+                                        &trans        &trans         &trans         &trans         &trans      &trans
             >;
         };
 
