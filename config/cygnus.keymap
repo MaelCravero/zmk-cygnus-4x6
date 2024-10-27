@@ -51,7 +51,7 @@
             key-positions = <26 27>;
         };
 
-        syms {
+        syms_l {
             bindings = <&mo 1>;
             key-positions = <38 39>;
         };
@@ -89,6 +89,26 @@
         diae {
             bindings = <&kp LS(LBKT)>;
             key-positions = <31 33>;
+        };
+
+        syms_r {
+            bindings = <&to 1>;
+            key-positions = <10 11>;
+        };
+
+        th {
+            bindings = <&th>;
+            key-positions = <17 30>;
+        };
+
+        ph {
+            bindings = <&ph>;
+            key-positions = <30 22>;
+        };
+
+        ch {
+            bindings = <&ch>;
+            key-positions = <30 39>;
         };
     };
 
@@ -147,6 +167,77 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        th: th {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TH";
+            bindings = <&th_lower>, <&th_upper>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ph: ph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PH";
+            bindings = <&ph_lower>, <&ph_upper>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ch: ch {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CH";
+            bindings = <&ch_lower>, <&ch_upper>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+
+    macros {
+        th_lower: the {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T &kp H>;
+            label = "THE";
+        };
+
+        th_upper: the_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(T) &kp H>;
+            label = "THE_UPPER";
+        };
+
+        ph_lower: ph_lower {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp H>;
+            label = "PH_LOWER";
+        };
+
+        ph_upper: ph_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(P) &kp H>;
+            label = "PH_UPPER";
+        };
+
+        ch_lower: ch_lower {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp H>;
+            label = "CH_LOWER";
+        };
+
+        ch_upper: ch_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(C) &kp H>;
+            label = "CH_UPPER";
+        };
     };
 
     keymap {
@@ -161,11 +252,11 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp N1  &kp N2  &kp N3        &kp N4        &kp N5       &kp N6       &kp N7         &kp N8     &kp N9   &kp N0        &kp LC(BSPC)
-&kp TAB     &kp Q   &kp W   &kp E         &kp R         &kp T        &kp Y        &kp U          &kp I      &kp O    &kp P         &sk RIGHT_SHIFT
-&kp LCTRL   &kp A   &kp S   &kp D         &kp F         &kp G        &kp H        &kp J          &lt 1 K    &kp L    &kp SEMI      &kp RIGHT_CONTROL
-&kp LSHFT   &kp Z   &kp X   &kp C         &kp V         &kp B        &kp N        &kp M          &kp COMMA  &kp DOT  &shift_exclm  &kp RIGHT_SHIFT
-                            &kp LEFT_GUI  &kp LEFT_ALT  &kp SPACE    &lt 2 ENTER  &kp BACKSPACE  &sl 1
+&kp ESCAPE  &kp N1  &kp N2  &kp N3        &kp N4        &kp N5       &kp N6       &kp N7         &kp N8      &kp N9   &kp N0        &kp DELETE
+&kp TAB     &kp Q   &kp W   &kp E         &kp R         &kp T        &kp Y        &kp U          &kp I       &kp O    &kp P         &sk RSHFT
+&kp LCTRL   &kp A   &kp S   &kp D         &kp F         &kp G        &kp H        &kp J          &lt 1 K     &kp L    &kp SEMI      &kp RIGHT_CONTROL
+&kp LSHFT   &kp Z   &kp X   &kp C         &kp V         &kp B        &kp N        &kp M          &kp COMMA   &kp DOT  &shift_exclm  &kp RIGHT_SHIFT
+                            &kp LEFT_GUI  &kp LEFT_ALT  &kp SPACE    &lt 2 ENTER  &kp BACKSPACE  &sk RSHIFT
             >;
         };
 
