@@ -174,7 +174,7 @@
 &kp TAB     &kp Q   &kp W   &kp E         &kp R         &kp T        &kp Y        &kp U          &kp I       &kp O         &kp P            &the
 &kp LCTRL   &kp A   &kp S   &kp D         &kp F         &kp G        &kp H        &kp J          &lt 1 K     &hmr RSHFT L  &hmr RCTRL SEMI  &kp RIGHT_CONTROL
 &kp LSHFT   &kp Z   &kp X   &kp C         &kp V         &kp B        &kp N        &kp M          &kp COMMA   &kp DOT       &shift_exclm     &sk RIGHT_SHIFT
-                            &kp LEFT_GUI  &kp LEFT_ALT  &kp SPACE    &lt 2 ENTER  &kp BACKSPACE  &sk RSHIFT
+                            &kp LEFT_GUI  &kp LEFT_ALT  &kp SPACE    &lt 2 ENTER  &kp BACKSPACE  &kp INSERT
             >;
         };
 
